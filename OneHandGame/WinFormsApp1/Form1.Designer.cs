@@ -33,7 +33,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            run = new Button();
+            spinButton = new Button();
             timer = new System.Windows.Forms.Timer(components);
             pictureBoxJackpot = new PictureBox();
             richTextBoxResult = new RichTextBox();
@@ -70,16 +70,16 @@
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             // 
-            // run
+            // spinButton
             // 
-            run.BackColor = Color.LimeGreen;
-            run.Location = new Point(877, 88);
-            run.Name = "run";
-            run.Size = new Size(130, 103);
-            run.TabIndex = 6;
-            run.Text = "Spin";
-            run.UseVisualStyleBackColor = false;
-            run.Click += button1_Click;
+            spinButton.BackColor = Color.LimeGreen;
+            spinButton.Location = new Point(877, 88);
+            spinButton.Name = "spinButton";
+            spinButton.Size = new Size(130, 103);
+            spinButton.TabIndex = 6;
+            spinButton.Text = "Spin";
+            spinButton.UseVisualStyleBackColor = false;
+            spinButton.Click += button1_Click;
             // 
             // pictureBoxJackpot
             // 
@@ -97,12 +97,13 @@
             // 
             richTextBoxResult.BackColor = Color.WhiteSmoke;
             richTextBoxResult.BorderStyle = BorderStyle.None;
+            richTextBoxResult.Enabled = false;
             richTextBoxResult.Font = new Font("DS-Digital", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             richTextBoxResult.Location = new Point(877, 197);
             richTextBoxResult.Name = "richTextBoxResult";
             richTextBoxResult.ReadOnly = true;
             richTextBoxResult.Size = new Size(130, 84);
-            richTextBoxResult.TabIndex = 8;
+            richTextBoxResult.TabIndex = 15;
             richTextBoxResult.Text = "";
             // 
             // Form1
@@ -113,7 +114,7 @@
             ClientSize = new Size(1040, 473);
             Controls.Add(pictureBoxJackpot);
             Controls.Add(richTextBoxResult);
-            Controls.Add(run);
+            Controls.Add(spinButton);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -133,7 +134,7 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private Button run;
+        private Button spinButton;
         private System.Windows.Forms.Timer timer;
         private PictureBox pictureBoxJackpot;
         private RichTextBox richTextBoxResult;

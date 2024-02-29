@@ -12,20 +12,17 @@ namespace WinFormsApp1
         int secondFruit = 0;
         int thirdFruit = 0;
         int coins = 100;
-
         public Form1()
         {
             InitializeComponent();
             timer.Interval = 50; //  milliseconds
             timer.Tick += Timer_Tick;
             backgroundMusicPlayer = new SoundPlayer("../../../audio/background_music.wav");
-
             backgroundMusicPlayer.PlayLooping(); // Loop the background music
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
             count++;
 
             if (count <= 12)
@@ -66,11 +63,14 @@ namespace WinFormsApp1
                     player.Play();
                 }
                 richTextBoxResult.Text = coins.ToString() + " $";
+                spinButton.Enabled = true;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            spinButton.Enabled = false;
+
             richTextBoxResult.ForeColor = Color.Black;
             if (coins <= 10)
             {
@@ -92,7 +92,6 @@ namespace WinFormsApp1
                     Application.Exit();
                 }
             }
-
             richTextBoxResult.Text = coins.ToString() + " $";
             player = new("../../../audio/wheel.wav");
             player.Play();
